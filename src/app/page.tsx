@@ -3,6 +3,8 @@ import {
   AudienceSection,
   HeroSection,
   ServicesSection,
+  TeamSection,
+  TestimonialSection,
 } from '@/components';
 
 export default function Home() {
@@ -12,6 +14,8 @@ export default function Home() {
       <AboutSection />
       <AudienceSection />
       <ServicesSection />
+      <TestimonialSection />
+      <TeamSection />
     </main>
   );
 }

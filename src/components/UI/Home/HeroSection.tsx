@@ -23,6 +23,7 @@ const HeroSection = () => {
           priority
           quality={100}
           className="object-cover -z-10"
+          placeholder="blur"
         />
       </motion.div>
 
@@ -60,7 +61,6 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
 
 const containerVariants = {
   hidden: {
@@ -123,10 +123,7 @@ export const TopbarSection = () => {
       variants={containerVariants}
     >
       <div className="py-3 flex items-center justify-between">
-        <motion.div
-          className="flex items-center gap-3"
-          variants={wordVariants}
-        >
+        <motion.div className="flex items-center gap-3" variants={wordVariants}>
           <Image src={logo} alt="logo" />
           <span className="text-lg tracking-[-0.0225rem]">Freelancer</span>
         </motion.div>
@@ -136,10 +133,7 @@ export const TopbarSection = () => {
           variants={wordContainerVariants}
         >
           {['Home', 'About', 'Membership'].map((item) => (
-            <motion.li
-              key={item}
-              variants={wordVariants}
-            >
+            <motion.li key={item} variants={wordVariants}>
               <Link href="#" className="tracking-[-0.02rem]">
                 {item}
               </Link>
@@ -156,4 +150,3 @@ export const TopbarSection = () => {
     </motion.nav>
   );
 };
-
