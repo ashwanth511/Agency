@@ -1,6 +1,8 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { Flip } from 'gsap/Flip';
+import { Power2, Elastic, Back } from 'gsap/all';
 import Image from 'next/image';
 import logo from '@/svgs/logo.svg';
 import { usePreloader } from '@/context/preloader';
@@ -15,6 +17,8 @@ const Preloader = () => {
   const { finishPreloader } = usePreloader();
 
   useEffect(() => {
+    gsap.registerPlugin(Flip);
+
     const tl = gsap.timeline({
       onComplete: finishPreloader,
     });
@@ -44,14 +48,26 @@ const Preloader = () => {
       )
       .fromTo(
         logoRef.current,
-        { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'bounce.out' },
+        { opacity: 0, y: -20, scale: 0.8 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          ease: 'bounce.out',
+        },
         '-=0.4'
       )
       .fromTo(
         textRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'bounce.out' },
+        { opacity: 0, y: 20, scale: 0.8 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          ease: 'bounce.out',
+        },
         '-=0.4'
       )
       .to(preloaderRef.current, {
@@ -61,6 +77,31 @@ const Preloader = () => {
         delay: 0.8,
       })
       .set(preloaderRef.current, { display: 'none' });
+
+    // Animate the logo and text with a flip effect
+    const state = Flip.getState([logoRef.current, textRef.current]);
+    tl.add(() => {
+      Flip.from(state, {
+        duration: 1,
+        ease: Back.easeOut.config(1.7),
+        onComplete: () => {
+          gsap.to([logoRef.current, textRef.current], {
+            scale: 1,
+            duration: 0.5,
+            ease: Elastic.easeOut.config(1, 0.3),
+          });
+        },
+      });
+    }, '-=0.8');
+
+    // Add a pulsing effect to the logo and text
+    gsap.to([logoRef.current, textRef.current], {
+      scale: 1.1,
+      yoyo: true,
+      repeat: -1,
+      duration: 1,
+      ease: Power2.easeInOut,
+    });
 
     return () => {
       tl.kill();
