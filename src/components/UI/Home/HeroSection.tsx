@@ -3,17 +3,25 @@ import Image from 'next/image';
 import logo from '@/svgs/logo.svg';
 import hero_banner from '@/images/hero_banner.png';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { usePreloader } from '@/context/preloader';
 
 const HeroSection = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.4 });
+  const { isPreloaderDone } = usePreloader();
   return (
-    <main className="h-[48rem] relative flex flex-col w-full overflow-hidden">
+    <main
+      className="h-[48rem] relative flex flex-col w-full overflow-hidden"
+      ref={ref}
+    >
       <TopbarSection />
 
       <motion.div
         className="absolute inset-0"
         initial={{ scale: 1.2 }}
-        animate={{ scale: 1 }}
+        animate={isPreloaderDone && inView ? { scale: 1 } : {}}
         transition={{ duration: 1.5, ease: [0.76, 0, 0.24, 1] }}
       >
         <Image
@@ -31,7 +39,7 @@ const HeroSection = () => {
         <motion.h1
           className="flex flex-col text-center items-center font-normal"
           initial="hidden"
-          animate="visible"
+          animate={isPreloaderDone && inView ? 'visible' : 'hidden'}
           variants={headingContainerVariants}
         >
           {['Create', 'Innovate', 'Connect'].map((text, index) => (

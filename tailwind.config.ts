@@ -15,6 +15,7 @@ const config: Config = {
         freelancer_black: '#101828',
         freelancer_gray: '#475467',
         freelancer_cream: '#F7E9D1',
+        border: 'rgba(220, 220, 220, 0.80)',
       },
       fontFamily: {
         sans: ['var(--font-helvetica)'],

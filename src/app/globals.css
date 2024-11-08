@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .parallax {
   overflow: hidden;
   margin: 0;
@@ -23,3 +22,6 @@
   margin-right: 1rem;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}

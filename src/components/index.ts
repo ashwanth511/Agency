@@ -5,3 +5,6 @@ export { default as AudienceSection } from '@/components/UI/Home/AudienceSection
 export { default as ServicesSection } from '@/components/UI/Home/ServicesSection';
 export { default as TestimonialSection } from '@/components/UI/Home/TestimonialSection';
 export { default as TeamSection } from '@/components/UI/Home/TeamSection';
+export { default as FAQSection } from '@/components/UI/Home/FAQSection';
+export { default as Footer } from '@/components/UI/Home/Footer';
+export { default as Preloader } from '@/components/Common/Preloader';
