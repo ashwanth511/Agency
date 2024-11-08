@@ -1,18 +1,12 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import testimonial_banner from '@/images/testimonial_banner.png';
 import hero_banner from '@/images/hero_banner.png';
 
 gsap.registerPlugin(ScrollTrigger);
-
-interface Testimonial {
-  image: StaticImageData;
-  quote: string;
-  author: string;
-}
 
 const testimonials: Testimonial[] = [
   {

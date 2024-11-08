@@ -13,12 +13,6 @@ import sms from '@/svgs/sms.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface Service {
-  title: string;
-  description: string;
-  icon: string;
-}
-
 const services: Service[] = [
   {
     title: 'High-Speed Internet',

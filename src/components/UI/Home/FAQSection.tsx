@@ -5,11 +5,6 @@ import Image from 'next/image';
 import arrow_right_down from '@/svgs/arrow_down_right.svg';
 import { motion, useInView } from 'framer-motion';
 
-interface FAQ {
-  question: string;
-  answer: string;
-}
-
 const faqs = [
   {
     question: 'What amenities are included in the coworking space',
@@ -66,12 +61,6 @@ const itemVariants = {
   },
 };
 
-interface FAQItemProps {
-  faq: FAQ;
-  isActive: boolean;
-  onClick: () => void;
-}
-
 const FAQItem: React.FC<FAQItemProps> = ({ faq, isActive, onClick }) => {
   return (
     <motion.div
@@ -82,9 +71,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ faq, isActive, onClick }) => {
         className="flex items-center justify-between max-w-screen-xl mx-auto w-[90%] cursor-pointer group"
         onClick={onClick}
       >
-        <p className="font-light md:text-2xl leading-none">
-          {faq.question}
-        </p>
+        <p className="font-light md:text-2xl leading-none">{faq.question}</p>
 
         <motion.div
           animate={{ rotate: isActive ? 180 : 0 }}
