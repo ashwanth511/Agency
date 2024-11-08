@@ -76,13 +76,13 @@ const FAQItem: React.FC<FAQItemProps> = ({ faq, isActive, onClick }) => {
   return (
     <motion.div
       variants={itemVariants}
-      className="py-5 border-t border-border transition-all duration-300"
+      className="py-4 md:py-5 border-t border-border transition-all duration-300"
     >
       <div
         className="flex items-center justify-between max-w-screen-xl mx-auto w-[90%] cursor-pointer group"
         onClick={onClick}
       >
-        <p className="font-light text-2xl leading-none transition-colors duration-300 group-hover:text-gray-700">
+        <p className="font-light md:text-2xl leading-none">
           {faq.question}
         </p>
 
@@ -102,7 +102,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ faq, isActive, onClick }) => {
         }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
-        <p className="text-sm text-light max-w-[80%]">{faq.answer}</p>
+        <p className="text-sm font-normal md:max-w-[80%]">{faq.answer}</p>
       </motion.div>
     </motion.div>
   );
@@ -131,7 +131,7 @@ const FAQSection: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-[8rem] leading-[7.625rem] tracking-[-0.16rem] font-medium"
+          className="text-[5rem] md:text-[8rem] leading-normal md:leading-[7.625rem] tracking-[-0.16rem] font-medium"
         >
           <MaskText phrases={["FAQ'S"]} tag="h1" />
         </motion.div>

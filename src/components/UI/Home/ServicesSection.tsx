@@ -90,7 +90,6 @@ const ServicesSection = () => {
     };
   }, []);
 
-  // Callback function for ref
   const setServiceBoxRef = (el: HTMLElement | null, index: number) => {
     if (el) {
       serviceBoxesRef.current[index] = el;
@@ -100,18 +99,26 @@ const ServicesSection = () => {
   return (
     <section className="bg-[#0E1118] pt-[5rem] pb-[7.25rem]">
       <div className="w-[90%] max-w-screen-xl mx-auto space-y-[6.25rem]">
-        <header className="font-medium text-[5rem] tracking-[-0.1rem]">
+        <header className="font-medium text-[3rem] md:text-[5rem] max-md:leading-[4rem] tracking-[-0.1rem]">
           <MaskText phrases={headerArr} tag="h1" />
         </header>
 
-        <div ref={servicesRef} className="grid grid-cols-3 gap-x-8 gap-y-10">
+        <div
+          ref={servicesRef}
+          className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-10"
+        >
           {services.map((service, i) => (
             <article
               key={i}
               ref={(el) => setServiceBoxRef(el, i)}
               className="flex flex-col gap-4"
             >
-              <Image src={service.icon} alt={service.title} />
+              <Image
+                src={service.icon}
+                alt={service.title}
+                width={48}
+                height={48}
+              />
               <h3 className="font-medium text-xl tracking-[-0.025rem]">
                 {service.title}
               </h3>

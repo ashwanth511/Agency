@@ -27,19 +27,19 @@ const sectionVariants = {
 const Footer = () => {
   return (
     <footer
-      className="bg-[#0E1118] h-[48rem] relative"
+      className="bg-[#0E1118] h-[90vh] md:h-[48rem] relative"
       style={{ clipPath: 'polygon(0% 0, 100% 0%, 100% 100%, 0 100%)' }}
     >
       <motion.div
         initial="hidden"
         whileInView="visible"
-        className="fixed bottom-0 h-[800px] w-full py-[5rem]"
-        viewport={{ once: false, amount: 0.9 }}
+        className="fixed bottom-0 lg:h-[800px] w-full py-[3rem] md:py-[5rem]"
+        viewport={{ once: false, amount: 0.7 }}
       >
         <div className="max-w-screen-xl w-[90%] mx-auto flex flex-col justify-between h-full">
-          <div className="flex justify-between">
+          <div className="flex max-md:flex-col justify-between gap-4 max-md:mb-8">
             <motion.p
-              className="max-w-[31.9375rem] text-2xl font-light leading-normal tracking-[-0.03rem]"
+              className="max-w-[31.9375rem] text-lg md:text-2xl font-light leading-normal tracking-[-0.03rem]"
               variants={sectionVariants}
             >
               Dive into a community buzzing with energy, collaboration, and
@@ -52,9 +52,6 @@ const Footer = () => {
                   className="uppercase text-white"
                   variants={textVariants}
                   custom={0}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.9 }}
                 >
                   Menu
                 </motion.h3>
@@ -92,7 +89,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <div className="py-[5rem] border-t border-b border-[#989898] mb-8">
+            <div className="py-[3rem] md:py-[5rem] border-t border-b border-[#989898] mb-8">
               <h1 className="text-[19vw] leading-none flex">
                 {'Freelancer'.split('').map((char, index) => (
                   <motion.span
@@ -106,13 +103,13 @@ const Footer = () => {
               </h1>
             </div>
 
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-10">
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center gap-5 md:gap-10">
                 {['Term', 'Privacy'].map((link, index) => (
                   <motion.a
                     key={index}
                     href=""
-                    className="text-base"
+                    className="text-xs md:text-base"
                     variants={textVariants}
                     custom={index}
                   >
@@ -122,7 +119,7 @@ const Footer = () => {
               </div>
 
               <motion.div
-                className="flex items-center gap-3"
+                className="flex items-center gap-2 md:gap-3 max-md:text-xs"
                 variants={sectionVariants}
               >
                 <svg
@@ -131,6 +128,7 @@ const Footer = () => {
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
+                  className="max-md:w-4"
                 >
                   <path
                     d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"

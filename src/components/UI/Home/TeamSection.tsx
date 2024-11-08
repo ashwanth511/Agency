@@ -40,7 +40,7 @@ const TeamSection = () => {
   const headerArr = ['Brains Behind', 'Our Vision.'];
   return (
     <section className="py-[5rem] bg-freelancer_cream flex flex-col gap-[6.25rem]">
-      <header className="w-[90%] mx-auto max-w-screen-xl text-freelancer_black font-medium text-[5rem] leading-[5rem] tracking-[-0.1rem]">
+      <header className="w-[90%] mx-auto max-w-screen-xl text-freelancer_black font-medium text-[3rem] md:text-[5rem] leading-[4rem] md:leading-[5rem] tracking-[-0.1rem]">
         <MaskText phrases={headerArr} tag="h1" />
       </header>
 
@@ -48,7 +48,7 @@ const TeamSection = () => {
         <ParallaxText baseVelocity={1}>
           <div className="inline-flex gap-4 flex-shrink-0">
             {team.map((t, i) => (
-              <article className="space-y-3 w-[21.75rem]" key={i}>
+              <article className="space-y-3 w-[16rem] md:w-[21.75rem]" key={i}>
                 <Image
                   src={t.image}
                   alt={t.name}

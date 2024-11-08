@@ -43,7 +43,7 @@ const TestimonialSection = () => {
       scrollTrigger: {
         trigger: section,
         start: 'top top',
-        end: '+=300%',
+        end: '+=250%',
         pin: true,
         scrub: 1,
       },
@@ -138,17 +138,17 @@ const TestimonialSection = () => {
         </div>
       ))}
 
-      <div className="mx-auto w-[90%] max-w-screen-xl flex flex-col self-end pb-[5rem] space-y-8 relative z-10">
+      <div className="mx-auto w-[90%] max-w-screen-xl flex flex-col self-end pb-[5rem] space-y-5 md:space-y-8 relative z-10">
         <p
           ref={quoteRef}
-          className="font-light text-[2.25rem] tracking-[-0.045rem] max-w-[42.3125rem]"
+          className="font-light text-[1.5rem] md:text-[2.25rem] tracking-[-0.045rem] max-w-[42.3125rem]"
         >
           &quot;{testimonials[currentIndex].quote}&quot;
         </p>
 
         <h3
           ref={authorRef}
-          className="text-[2.25rem] font-medium tracking-[-0.045rem]"
+          className="text-2xl md:text-[2.25rem] font-medium tracking-[-0.045rem]"
         >
           {testimonials[currentIndex].author}
         </h3>
