@@ -67,7 +67,7 @@ const CTASection: React.FC<CTASectionProps> = ({
         variants={containerVariants}
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        {/* Main CTA Card */}
+        {/* Main CTA Card with gradient background */}
         <div className="relative bg-[#002228] rounded-3xl p-8 lg:p-12 overflow-hidden">
          
         <div 
