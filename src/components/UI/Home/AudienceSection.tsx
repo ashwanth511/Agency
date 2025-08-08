@@ -59,14 +59,14 @@ const AudienceSection = () => {
             className="flex items-center bg-black gap-2 p-2 rounded-lg"
           >
             <Image src={freelancer} alt="Freelancer logo" className="w-3.5 md:w-6" />
-            <span className="text-sm md:text-xl leading-[-0.025rem]">Freelancers</span>
+            <span className="text-sm md:text-xl leading-[-0.025rem]">SalesForce</span>
           </div>
           <div
             ref={handlePillRef(1)}
             className="flex items-center bg-black gap-2 p-2 rounded-lg"
           >
             <Image src={book} alt="Book logo" className="w-3.5 md:w-6" />
-            <span className="text-sm md:text-xl leading-[-0.025rem]">Students</span>
+            <span className="text-sm md:text-xl leading-[-0.025rem]">Mvp Development</span>
           </div>
         </div>
         <div className="w-[90%] md:w-[70%] mx-auto flex items-center justify-between">
@@ -75,7 +75,7 @@ const AudienceSection = () => {
             className="flex items-center bg-black gap-2 p-2 rounded-lg"
           >
             <Image src={monitor} alt="Remote worker logo" className="w-3.5 md:w-6" />
-            <span className="text-sm md:text-xl leading-[-0.025rem]">Remote workers</span>
+            <span className="text-sm md:text-xl leading-[-0.025rem]">Web Development</span>
           </div>
           <div
             ref={handlePillRef(3)}
@@ -83,7 +83,25 @@ const AudienceSection = () => {
           >
             <Image src={corporate} alt="Corporate logo" className="w-3.5 md:w-6" />
             <span className="text-sm md:text-xl leading-[-0.025rem]">
-              Corporate employees
+              App/IOS  Development
+            </span>
+          </div>
+        </div>
+        <div className="w-[90%] md:w-[70%] mx-auto flex items-center justify-between">
+          <div
+            ref={handlePillRef(4)}
+            className="flex items-center bg-black gap-2 p-2 rounded-lg"
+          >
+            <Image src={monitor} alt="Remote worker logo" className="w-3.5 md:w-6" />
+            <span className="text-sm md:text-xl leading-[-0.025rem]">Sales</span>
+          </div>
+          <div
+            ref={handlePillRef(5)}
+            className="flex items-center bg-black gap-2 p-2 rounded-lg"
+          >
+            <Image src={corporate} alt="Corporate logo" className="w-3.5 md:w-6" />
+            <span className="text-sm md:text-xl leading-[-0.025rem]">
+              Marketing
             </span>
           </div>
         </div>
